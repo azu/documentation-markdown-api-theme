@@ -10,7 +10,7 @@
     "src/"
   ],
   "name": "documentation-markdown-api-theme",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "documentation markdown theme",
   "main": "lib/index.js",
   "scripts": {
