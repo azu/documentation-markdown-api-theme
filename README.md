@@ -24,7 +24,11 @@ echo out.md | add-text-to-markdown path/to/file.md --section "section name" --wr
 
 ### Why using `-f html`
 
-See <https://github.com/documentationjs/documentation/issues/550>
+See https://github.com/documentationjs/documentation/issues/550
+
+## Real Example
+
+See [https://almin.js.org/docs/api/](https://almin.js.org/docs/api/)
 
 ## Example Output
 
