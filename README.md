@@ -16,7 +16,15 @@ Convert `example.js` to Markdown API reference
 $ documentation build --access public--theme documentation-markdown-api-theme -f html -o out.md example.js
 ```
 
-### Why `-f html`
+Simulate `documentation readme` command using [add-text-to-markdown](https://github.com/azu/add-text-to-markdown "add-text-to-markdown"):
+
+```sh
+npm i -g add-text-to-markdown
+documentation build --access public--theme documentation-markdown-api-theme -f html -o out.md example.js
+echo out.md | add-text-to-markdown path/to/file.md --section "section name"
+```
+
+### Why using `-f html`
 
 See https://github.com/documentationjs/documentation/issues/550
 
