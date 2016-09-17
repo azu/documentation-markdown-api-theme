@@ -12,21 +12,67 @@ Install with [npm](https://www.npmjs.com/):
 
 Convert `example.js` to Markdown API reference
 
-```
-$ documentation build --access public--theme documentation-markdown-api-theme -f html -o out.md example.js
-```
+    $ documentation build --access public --theme documentation-markdown-api-theme -f html -o out.md example.js
 
 Simulate `documentation readme` command using [add-text-to-markdown](https://github.com/azu/add-text-to-markdown "add-text-to-markdown"):
 
 ```sh
 npm i -g add-text-to-markdown
-documentation build --access public--theme documentation-markdown-api-theme -f html -o out.md example.js
-echo out.md | add-text-to-markdown path/to/file.md --section "section name"
+documentation build --access public --theme documentation-markdown-api-theme -f html -o out.md example.js
+echo out.md | add-text-to-markdown path/to/file.md --section "section name" --write
 ```
 
 ### Why using `-f html`
 
-See https://github.com/documentationjs/documentation/issues/550
+See <https://github.com/documentationjs/documentation/issues/550>
+
+## Example Output
+
+### `hello_destructuring({ name, age })`
+
+hello with destructuring params
+
+**Parameters**
+
+-   `name`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+-   `age`: **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
+
+### `hello(text: string): string`
+
+**Parameters**
+
+-   `text`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
+
+Returns: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - echo text
+
+### `commentsToAST(comments: Array<Object>, opts: Object, callback: Function): undefined`
+
+Given a hierarchy-nested set of `comments`, generate an remark-compatible
+Abstract Syntax Tree usable for generating Markdown output
+
+**Parameters**
+
+-   `comments`: **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)>** - nested comment
+-   `opts`: **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** - currently none accepted
+-   `callback`: **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** - called with AST
+
+Returns: **[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)**
+
+### `Person`
+
+Person class
+
+#### `constructor({ name })`
+
+**Parameters**
+
+-   `name`: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** - Person name
+
+#### `getName(): string`
+
+get person name
+
+Returns: **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ## Changelog
 
@@ -44,16 +90,16 @@ Pull requests and stars are always welcome.
 
 For bugs and feature requests, [please create an issue](https://github.com/azu/documentation-markdown-api-theme/issues).
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Commit your changes: `git commit -am 'Add some feature'`
+4.  Push to the branch: `git push origin my-new-feature`
+5.  Submit a pull request :D
 
 ## Author
 
-- [github/azu](https://github.com/azu)
-- [twitter/azu_re](https://twitter.com/azu_re)
+-   [github/azu](https://github.com/azu)
+-   [twitter/azu_re](https://twitter.com/azu_re)
 
 ## License
 
