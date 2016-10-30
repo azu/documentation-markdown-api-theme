@@ -37,7 +37,7 @@ Add npm run-script for updating `## Usage` section
 ```json
   ...
   "scripts": {
-    "docs": "documentation build --access public --theme ./node_modules/documentation-markdown-api-theme/lib/index -f html -o out.md src/UIEventObserver.js && cat out.md | add-text-to-markdown README.md --section \"Usage\" --write; rm out.md",
+    "docs": "documentation build --access public --theme ./node_modules/documentation-markdown-api-theme/lib/index -f html -o out.md src/index.js && cat out.md | add-text-to-markdown README.md --section \"Usage\" --write; rm out.md",
     "prepublish": "npm run --if-present build && npm run docs"
   },
   "devDependencies": {
