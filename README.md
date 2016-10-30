@@ -22,13 +22,48 @@ documentation build --access public --theme documentation-markdown-api-theme -f 
 echo out.md | add-text-to-markdown path/to/file.md --section "section name" --write
 ```
 
+### Real Usage
+
+We want to create updatable API Usage to `README.md`
+
+Install devDependencies:
+
+```sh
+npm install documentation-markdown-api-theme documentation add-text-to-markdown -D
+```
+
+Add npm run-script for updating `## Usage` section
+
+```json
+  ...
+  "scripts": {
+    "docs": "documentation build --access public --theme ./node_modules/documentation-markdown-api-theme/lib/index -f html -o out.md src/UIEventObserver.js && cat out.md | add-text-to-markdown README.md --section \"Usage\" --write; rm out.md",
+    "prepublish": "npm run --if-present build && npm run docs"
+  },
+  "devDependencies": {
+    "add-text-to-markdown": "^1.0.3",
+    "documentation": "^4.0.0-beta11",
+    "documentation-markdown-api-theme": "^1.0.2"
+  },
+  ...
+```
+
+Update `## Usage` section
+
+```
+npm run docs
+```
+
 ### Why using `-f html`
 
 See https://github.com/documentationjs/documentation/issues/550
 
 ## Real Example
 
-See [https://almin.js.org/docs/api/](https://almin.js.org/docs/api/)
+See 
+
+- [https://almin.js.org/docs/api/](https://almin.js.org/docs/api/)
+- [azu/ui-event-observer: Provide performant way to subscribe to browser UI Events.](https://github.com/azu/ui-event-observer#usage "azu/ui-event-observer: Provide performant way to subscribe to browser UI Events.")
 
 ## Example Output
 
