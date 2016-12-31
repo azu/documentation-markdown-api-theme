@@ -1,6 +1,6 @@
 # documentation-markdown-api-theme
 
-documentation's theme that output markdown.
+[documentation](https://github.com/documentationjs/documentation "documentation")'s theme for outputing markdown.
 
 ## Install
 
